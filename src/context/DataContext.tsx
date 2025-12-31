@@ -19,7 +19,7 @@ type IDataContext = {
   setEndDate: Dispatch<SetStateAction<string>>;
 };
 
-type IVenda = {
+export type IVenda = {
   id: string;
   nome: string;
   preco: number;
