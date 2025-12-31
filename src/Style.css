@@ -1,0 +1,94 @@
+/* Global variables */
+html {
+  --primary-color: #463220;
+  --secondary-color: #66593c;
+  --accent-color: #eceadd;
+  --color-4: #f7f8f5;
+  --color-5: #ffffff;
+  --gap-s: 0.625rem;
+  --gap: 1.25rem;
+}
+
+/* CSS Reset */
+body {
+  font-family: sans-serif;
+  margin: 0px;
+  color: var(--secondary-color);
+  background-color: var(--color-4);
+}
+
+button {
+  font-family: sans-serif;
+  font-style: 1rem;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Utility classes */
+.box {
+  padding: var(--gap);
+  border-radius: var(--gap);
+  background-color: var(--color-5);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.flex > * {
+  flex: 1;
+}
+
+.mb {
+  margin-bottom: var(--gap);
+}
+
+.bg-1 {
+  background-color: var(--primary-color);
+}
+
+.bg-2 {
+  background-color: var(--secondary-color);
+}
+
+.bg-3 {
+  background-color: var(--accent-color);
+}
+
+.bg-4 {
+  background-color: var(--color-4);
+}
+
+.bg-5 {
+  background-color: var(--color-5);
+}
+
+.container {
+  display: grid;
+  padding: var(--gap);
+  gap: var(--gap);
+}
+
+.abstract {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--gap);
+    color: var(--primary-color);
+  }
+}

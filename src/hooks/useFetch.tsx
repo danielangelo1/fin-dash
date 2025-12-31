@@ -1,0 +1,47 @@
+import React, { useEffect, useRef } from "react";
+
+function useFetch<T>(url: RequestInfo | URL, options?: RequestInit) {
+  const [data, setData] = React.useState<T | null>(null);
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [error, setError] = React.useState<string | null>(null);
+
+  const optionsRef = useRef(options);
+  optionsRef.current = options;
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+
+        const response = await fetch(url, {
+          signal,
+          ...optionsRef.current,
+        });
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+
+        const json = await response.json();
+        if (!signal.aborted) setData(json);
+
+        console.log("Fetch response:", response);
+      } catch (error) {
+        if (!signal.aborted && error instanceof Error) setError(error.message);
+      } finally {
+        if (!signal.aborted) setLoading(false);
+      }
+    };
+    fetchData();
+
+    return () => {
+      controller.abort();
+    };
+  }, [url]);
+
+  return { data, loading, error };
+}
+
+export default useFetch;
