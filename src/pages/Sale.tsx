@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-import { IVenda } from "../context/DataContext";
 import Loading from "../components/Loading";
 import { API_URL } from "../api/api";
+import { IVenda } from "../types/Sales";
 
 type SaleWithoutDate = Omit<IVenda, "data">;
 

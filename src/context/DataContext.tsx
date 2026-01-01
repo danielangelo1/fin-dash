@@ -9,6 +9,7 @@ import {
 import useFetch from "../hooks/useFetch";
 import { getAnyDaysAgo } from "../utils/util";
 import { API_URL } from "../api/api";
+import { IVenda } from "../types/Sales";
 
 type IDataContext = {
   data: IVenda[] | null;
@@ -18,16 +19,6 @@ type IDataContext = {
   endDate: string;
   setStartDate: Dispatch<SetStateAction<string>>;
   setEndDate: Dispatch<SetStateAction<string>>;
-};
-
-export type IVenda = {
-  id: string;
-  nome: string;
-  preco: number;
-  status: "pago" | "processando" | "falha";
-  pagamento: "boleto" | "cartao" | "pix";
-  data: string;
-  parcelas: number | null;
 };
 
 export const useData = () => {

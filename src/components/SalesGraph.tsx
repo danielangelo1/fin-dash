@@ -1,15 +1,8 @@
-import { IVenda } from "../context/DataContext";
 import { LineChart, XAxis, YAxis, Line, Tooltip, Legend } from "recharts";
+import { IVenda, SaleDay } from "../types/Sales";
 
 type SalesGraphProps = {
   data: IVenda[];
-};
-
-type SaleDay = {
-  data: string;
-  pago: number;
-  processando: number;
-  falha: number;
 };
 
 const transformData = (data: IVenda[]): SaleDay[] => {

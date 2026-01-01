@@ -1,5 +1,5 @@
-import { IVenda } from "../context/DataContext";
 import { NavLink } from "react-router-dom";
+import { IVenda } from "../types/Sales";
 
 const SaleItem = ({ sale }: { sale: IVenda }) => {
   return (
