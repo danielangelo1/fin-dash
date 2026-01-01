@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import { CSSProperties } from "react";
 
 const loadingStyle: CSSProperties = {
   border: "var(--gap-s) solid var(--secondary-color)",

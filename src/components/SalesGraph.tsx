@@ -1,16 +1,9 @@
-import React from "react";
 import { IVenda } from "../context/DataContext";
 import { LineChart, XAxis, YAxis, Line, Tooltip, Legend } from "recharts";
 
 type SalesGraphProps = {
   data: IVenda[];
 };
-
-const graphData = [
-  { data: "2023-01-01", pago: 1500, processando: 2000, falha: 500 },
-  { data: "2023-01-02", pago: 1800, processando: 1500, falha: 300 },
-  { data: "2023-01-03", pago: 2000, processando: 1000, falha: 200 },
-];
 
 type SaleDay = {
   data: string;

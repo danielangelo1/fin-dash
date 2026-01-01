@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import DateRange from "./DateRange";
 import Months from "./Months";
 import { useLocation } from "react-router-dom";
 
 const Header = () => {
-  const [title, setTitle] = React.useState("Resumo");
+  const [title, setTitle] = useState("Resumo");
 
   const { pathname } = useLocation();
 

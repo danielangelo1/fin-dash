@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import { CSSProperties } from "react";
 import { getMonthName, formatDate } from "../utils/util";
 import { useData } from "../context/DataContext";
 

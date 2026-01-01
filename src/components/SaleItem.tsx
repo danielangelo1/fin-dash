@@ -1,4 +1,3 @@
-import React from "react";
 import { IVenda } from "../context/DataContext";
 import { NavLink } from "react-router-dom";
 

@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function useFetch<T>(url: RequestInfo | URL, options?: RequestInit) {
-  const [data, setData] = React.useState<T | null>(null);
-  const [loading, setLoading] = React.useState<boolean>(false);
-  const [error, setError] = React.useState<string | null>(null);
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
   const optionsRef = useRef(options);
   optionsRef.current = options;
