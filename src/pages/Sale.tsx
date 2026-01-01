@@ -14,6 +14,7 @@ const Sale = () => {
 
   if (loading) return <Loading />;
   if (!data) return null;
+
   return (
     <div>
       <div className="box mb">ID: {data.id}</div>

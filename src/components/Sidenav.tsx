@@ -1,5 +1,6 @@
 import React from "react";
 import sales from "../assets/icons/vendas.svg";
+import abstract from "../assets/icons/resumo.svg";
 import webhooks from "../assets/icons/webhooks.svg";
 import settings from "../assets/icons/configuracoes.svg";
 import contact from "../assets/icons/contato.svg";

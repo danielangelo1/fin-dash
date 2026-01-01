@@ -4,7 +4,9 @@ import SaleItem from "../components/SaleItem";
 
 const Sales = () => {
   const { data } = useData();
+
   if (!data) return null;
+
   return (
     <ul>
       {data.map((item) => (
