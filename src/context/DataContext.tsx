@@ -8,6 +8,7 @@ import {
 } from "react";
 import useFetch from "../hooks/useFetch";
 import { getAnyDaysAgo } from "../utils/util";
+import { API_URL } from "../api/api";
 
 type IDataContext = {
   data: IVenda[] | null;
@@ -46,7 +47,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [endDate, setEndDate] = useState(getAnyDaysAgo(0));
 
   const { data, loading, error } = useFetch<IVenda[]>(
-    `https://data.origamid.dev/vendas/?inicio=${startDate}&final=${endDate}`,
+    `${API_URL}/vendas?inicio=${startDate}&final=${endDate}`,
   );
 
   return (

@@ -1,10 +1,13 @@
+import Loading from "../components/Loading";
 import SalesGraph from "../components/SalesGraph";
 import { useData } from "../context/DataContext";
 
 const Abstract = () => {
-  const { data } = useData();
+  const { data, loading } = useData();
 
+  if (loading) return <Loading />;
   if (!data) return null;
+
   return (
     <section>
       <div className="abstract flex mb">

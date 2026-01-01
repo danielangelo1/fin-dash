@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { IVenda } from "../context/DataContext";
 import Loading from "../components/Loading";
+import { API_URL } from "../api/api";
 
 type SaleWithoutDate = Omit<IVenda, "data">;
 
 const Sale = () => {
   const { id } = useParams();
   const { data, loading } = useFetch<SaleWithoutDate>(
-    `https://data.origamid.dev/vendas/${id}`,
+    `${API_URL}/vendas/${id}`,
   );
 
   if (loading) return <Loading />;
